@@ -8,6 +8,7 @@
 import UIKit
 import AlamofireImage
 import Parse
+import MBProgressHUD
 
 class CameraViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -32,7 +33,11 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         
         post["image"] = file
         
+        // Display HUD right before the request is made
+        MBProgressHUD.showAdded(to: self.view, animated: true)
         post.saveInBackground { (success, error) in
+            // Hide HUD after the request is made
+            MBProgressHUD.hide(for: self.view, animated: true)
             if success {
                 self.dismiss(animated: true, completion: nil)
                 print("Saved")

@@ -125,6 +125,7 @@
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="p27-xK-ze3" secondAttribute="bottom" constant="10" id="SU3-jy-qBS"/>
                                                 <constraint firstItem="aHm-nM-1mI" firstAttribute="top" secondItem="jTZ-Fw-xtP" secondAttribute="bottom" constant="10" id="a91-Kv-xRw"/>
                                                 <constraint firstItem="jTZ-Fw-xtP" firstAttribute="centerX" secondItem="hy7-qo-IJ2" secondAttribute="centerX" id="cRj-ii-dHM"/>
+                                                <constraint firstItem="jTZ-Fw-xtP" firstAttribute="centerX" secondItem="hy7-qo-IJ2" secondAttribute="centerX" id="dTX-hc-DU3"/>
                                                 <constraint firstItem="p27-xK-ze3" firstAttribute="top" secondItem="jTZ-Fw-xtP" secondAttribute="bottom" constant="10" id="zgn-BJ-jzj"/>
                                             </constraints>
                                         </tableViewCellContentView>
