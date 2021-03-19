@@ -14,18 +14,32 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var tableView: UITableView!
     
     var posts = [PFObject]()
+    let postRefreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.dataSource = self
         tableView.delegate = self
+        
+        loadPosts()
+        
+        postRefreshControl.addTarget(self, action: #selector(loadPosts), for: .valueChanged)
+        tableView.refreshControl = postRefreshControl
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 150
 
         // Do any additional setup after loading the view.
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
+        loadPosts()
+        
+    }
+    
+    @objc func loadPosts() {
         
         let query = PFQuery(className: "Posts")
         query.includeKey("author")
@@ -35,10 +49,12 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
             if posts != nil {
                 self.posts = posts!
                 self.tableView.reloadData()
+                self.postRefreshControl.endRefreshing()
             }
         }
-        
     }
+    
+    
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -53,7 +69,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         let user = post["author"] as! PFUser
         cell.usernameLabel.text = user.username
-        cell.captionLabel.text = post["caption"] as! String
+        cell.captionLabel.text = post["caption"] as? String
         
         let imageFile = post["image"] as! PFFileObject
         let urlString = imageFile.url!
