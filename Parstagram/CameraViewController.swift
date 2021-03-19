@@ -9,13 +9,22 @@ import UIKit
 
 class CameraViewController: UIViewController {
 
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var captionField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+    
+    @IBAction func onSubmitButton(_ sender: Any) {
+    }
+    
+    @IBAction func onCameraButton(_ sender: Any) {
+    }
+    
     /*
     // MARK: - Navigation
 
