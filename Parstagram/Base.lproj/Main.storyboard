@@ -80,6 +80,7 @@
                     <connections>
                         <outlet property="passwordField" destination="O0m-rO-FUD" id="BSb-hN-CWR"/>
                         <outlet property="usernameField" destination="Do0-SE-K9U" id="emW-rA-0vP"/>
+                        <segue destination="vaa-e6-qLh" kind="presentation" identifier="loginSegue" modalPresentationStyle="fullScreen" id="6nd-1u-Zha"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
