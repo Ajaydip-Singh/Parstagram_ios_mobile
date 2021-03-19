@@ -23,6 +23,9 @@
                                     <constraint firstAttribute="width" constant="50" id="v8g-e5-1PN"/>
                                 </constraints>
                                 <state key="normal" title="Sign In"/>
+                                <connections>
+                                    <action selector="onSignIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="whh-DI-0Dg"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O0m-rO-FUD">
                                 <rect key="frame" x="25" y="398" width="385" height="34"/>
@@ -48,6 +51,9 @@
                                     <constraint firstAttribute="width" constant="54" id="DGz-1c-n8d"/>
                                 </constraints>
                                 <state key="normal" title="Sign Up"/>
+                                <connections>
+                                    <action selector="onSignUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mcb-Tc-BPP"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -71,6 +77,10 @@
                             <constraint firstItem="fc1-6r-LYT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="90" id="vib-WU-qQQ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="passwordField" destination="O0m-rO-FUD" id="BSb-hN-CWR"/>
+                        <outlet property="usernameField" destination="Do0-SE-K9U" id="emW-rA-0vP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
