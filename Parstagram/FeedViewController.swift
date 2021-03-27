@@ -162,7 +162,7 @@ class FeedViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        commentBar.inputTextView.text = "Add a comment..."
+        commentBar.inputTextView.placeholder = "Add a comment..."
         
         let post = posts[indexPath.section]
         let comments = (post["comments"] as? [PFObject]) ?? []
